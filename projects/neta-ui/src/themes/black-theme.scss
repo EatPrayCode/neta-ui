@@ -1,0 +1,9 @@
+$neta-black-primary: mat-palette($mat-grey, 700, 300, 900);
+$neta-black-accent: mat-palette($mat-blue-grey, 400);
+$neta-black-warn: mat-palette($mat-red, 500);
+
+$neta-black-theme: mat-dark-theme(
+  $neta-black-primary,
+  $neta-black-accent,
+  $neta-black-warn
+);

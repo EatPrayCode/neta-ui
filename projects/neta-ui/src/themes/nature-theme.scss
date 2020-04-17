@@ -1,0 +1,9 @@
+$neta-nature-primary: mat-palette($mat-brown, 700, 300, 900);
+$neta-nature-accent: mat-palette($mat-deep-purple, 300);
+$neta-nature-warn: mat-palette($mat-red, 600);
+
+$neta-nature-theme: mat-light-theme(
+  $neta-nature-primary,
+  $neta-nature-accent,
+  $neta-nature-warn
+);
