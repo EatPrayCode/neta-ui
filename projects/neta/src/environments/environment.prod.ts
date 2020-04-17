@@ -1,11 +1,11 @@
 const packageJson = require('../../../../package.json');
 
 export const environment = {
-  appName: 'Angular Ngrx Material Starter',
+  appName: 'NetaConnect',
   envName: 'PROD',
   production: true,
   test: false,
-  i18nPrefix: '/neta-ui',
+  i18nPrefix: '/neta',
   versions: {
     app: packageJson.version,
     angular: packageJson.dependencies['@angular/core'],

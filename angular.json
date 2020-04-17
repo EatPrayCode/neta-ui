@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "neta-ui": {
+    "neta": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -11,26 +11,26 @@
           "style": "scss"
         }
       },
-      "root": "projects/neta-ui",
-      "sourceRoot": "projects/neta-ui/src",
+      "root": "projects/neta",
+      "sourceRoot": "projects/neta/src",
       "prefix": "neta",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/neta-ui",
-            "index": "projects/neta-ui/src/index.html",
-            "main": "projects/neta-ui/src/main.ts",
-            "polyfills": "projects/neta-ui/src/polyfills.ts",
-            "tsConfig": "projects/neta-ui/tsconfig.app.json",
+            "outputPath": "dist/neta",
+            "index": "projects/neta/src/index.html",
+            "main": "projects/neta/src/main.ts",
+            "polyfills": "projects/neta/src/polyfills.ts",
+            "tsConfig": "projects/neta/tsconfig.app.json",
             "aot": true,
             "assets": [
-              "projects/neta-ui/src/favicon.ico",
-              "projects/neta-ui/src/assets"
+              "projects/neta/src/favicon.ico",
+              "projects/neta/src/assets"
             ],
             "styles": [
-              "projects/neta-ui/src/styles-app-loading.scss",
-              "projects/neta-ui/src/styles.scss"
+              "projects/neta/src/styles-app-loading.scss",
+              "projects/neta/src/styles.scss"
             ],
             "scripts": []
           },
@@ -38,8 +38,8 @@
             "production": {
               "fileReplacements": [
                 {
-                  "replace": "projects/neta-ui/src/environments/environment.ts",
-                  "with": "projects/neta-ui/src/environments/environment.prod.ts"
+                  "replace": "projects/neta/src/environments/environment.ts",
+                  "with": "projects/neta/src/environments/environment.prod.ts"
                 }
               ],
               "optimization": true,
@@ -83,34 +83,34 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "neta-ui:build"
+            "browserTarget": "neta:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "neta-ui:build:production"
+              "browserTarget": "neta:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "neta-ui:build"
+            "browserTarget": "neta:build"
           }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "projects/neta-ui/src/test.ts",
-            "polyfills": "projects/neta-ui/src/polyfills.ts",
-            "tsConfig": "projects/neta-ui/tsconfig.spec.json",
-            "karmaConfig": "projects/neta-ui/karma.conf.js",
+            "main": "projects/neta/src/test.ts",
+            "polyfills": "projects/neta/src/polyfills.ts",
+            "tsConfig": "projects/neta/tsconfig.spec.json",
+            "karmaConfig": "projects/neta/karma.conf.js",
             "assets": [
-              "projects/neta-ui/src/favicon.ico",
-              "projects/neta-ui/src/assets"
+              "projects/neta/src/favicon.ico",
+              "projects/neta/src/assets"
             ],
             "styles": [
-              "projects/neta-ui/src/styles-app-loading.scss",
-              "projects/neta-ui/src/styles.scss"
+              "projects/neta/src/styles-app-loading.scss",
+              "projects/neta/src/styles.scss"
             ],
             "scripts": []
           },
@@ -118,8 +118,8 @@
             "test": {
               "fileReplacements": [
                 {
-                  "replace": "projects/neta-ui/src/environments/environment.ts",
-                  "with": "projects/neta-ui/src/environments/environment.test.ts"
+                  "replace": "projects/neta/src/environments/environment.ts",
+                  "with": "projects/neta/src/environments/environment.test.ts"
                 }
               ]
             }
@@ -129,9 +129,9 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "projects/neta-ui/tsconfig.app.json",
-              "projects/neta-ui/tsconfig.spec.json",
-              "projects/neta-ui/e2e/tsconfig.json"
+              "projects/neta/tsconfig.app.json",
+              "projects/neta/tsconfig.spec.json",
+              "projects/neta/e2e/tsconfig.json"
             ],
             "exclude": [
               "**/node_modules/**"
@@ -141,19 +141,19 @@
         "e2e": {
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
-            "protractorConfig": "projects/neta-ui/e2e/protractor.conf.js",
-            "devServerTarget": "neta-ui:serve"
+            "protractorConfig": "projects/neta/e2e/protractor.conf.js",
+            "devServerTarget": "neta:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "neta-ui:serve:production"
+              "devServerTarget": "neta:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "neta-ui",
+  "defaultProject": "neta",
   "cli": {
     "analytics": "080efc85-ede4-4885-b7dc-b0d6c421c2de"
   }

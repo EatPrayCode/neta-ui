@@ -2,7 +2,7 @@ const path = require('path');
 const express = require('express');
 const compression = require('compression');
 
-const CONTEXT = `/${process.env.CONTEXT || 'neta-ui'}`;
+const CONTEXT = `/${process.env.CONTEXT || 'neta'}`;
 const PORT = process.env.PORT || 4000;
 
 const app = express();
@@ -11,13 +11,13 @@ app.use(compression());
 app.use(
   CONTEXT,
   express.static(
-    path.resolve(__dirname, '../../dist/neta-ui')
+    path.resolve(__dirname, '../../dist/neta')
   )
 );
 app.use(
   '/',
   express.static(
-    path.resolve(__dirname, '../../dist/neta-ui')
+    path.resolve(__dirname, '../../dist/neta')
   )
 );
 app.listen(PORT, () =>
