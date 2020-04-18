@@ -19,6 +19,7 @@ import {
   actionSettingsChangeAnimationsPageDisabled,
   actionSettingsChangeLanguage
 } from '../core/settings/settings.actions';
+import { ServiceWorkedHandler } from '../core/service-worker-handler/service-worker-handler.service';
 
 @Component({
   selector: 'neta-root',
@@ -27,6 +28,7 @@ import {
   animations: [routeAnimations]
 })
 export class AppComponent implements OnInit {
+  
   isProd = env.production;
   envName = env.envName;
   version = env.versions.app;
@@ -49,7 +51,8 @@ export class AppComponent implements OnInit {
 
   constructor(
     private store: Store,
-    private storageService: LocalStorageService
+    private storageService: LocalStorageService,
+    private serviceWorkedHandler: ServiceWorkedHandler
   ) {}
 
   private static isIEorEdgeOrSafari() {

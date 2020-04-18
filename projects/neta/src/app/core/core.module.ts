@@ -74,6 +74,7 @@ import {
   faInstagram,
   faYoutube
 } from '@fortawesome/free-brands-svg-icons';
+import { ServiceWorkedHandler } from './service-worker-handler/service-worker-handler.service';
 
 export {
   TitleService,
@@ -148,7 +149,8 @@ export function HttpLoaderFactory(http: HttpClient) {
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: HttpErrorInterceptor, multi: true },
     { provide: ErrorHandler, useClass: AppErrorHandler },
-    { provide: RouterStateSerializer, useClass: CustomSerializer }
+    { provide: RouterStateSerializer, useClass: CustomSerializer },
+    ServiceWorkedHandler
   ],
   exports: [
     // angular
