@@ -26,7 +26,8 @@
             "aot": true,
             "assets": [
               "projects/neta/src/favicon.ico",
-              "projects/neta/src/assets"
+              "projects/neta/src/assets",
+              "projects/neta/src/manifest.webmanifest"
             ],
             "styles": [
               "projects/neta/src/styles-app-loading.scss",
@@ -76,7 +77,9 @@
                   "type": "anyComponentStyle",
                   "maximumWarning": "6kb"
                 }
-              ]
+              ],
+              "serviceWorker": true,
+              "ngswConfigPath": "projects/neta/ngsw-config.json"
             }
           }
         },
@@ -106,7 +109,8 @@
             "karmaConfig": "projects/neta/karma.conf.js",
             "assets": [
               "projects/neta/src/favicon.ico",
-              "projects/neta/src/assets"
+              "projects/neta/src/assets",
+              "projects/neta/src/manifest.webmanifest"
             ],
             "styles": [
               "projects/neta/src/styles-app-loading.scss",
