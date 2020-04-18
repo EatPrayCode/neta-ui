@@ -18,7 +18,7 @@ export class ServiceWorkedHandler {
       console.log('Nope 🙁');
       this.swUpdate.activateUpdate();
     }
-
+    console.log('Nope 🙁');
   }
 
 }

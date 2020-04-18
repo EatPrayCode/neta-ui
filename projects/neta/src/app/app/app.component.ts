@@ -28,7 +28,7 @@ import { ServiceWorkedHandler } from '../core/service-worker-handler/service-wor
   animations: [routeAnimations]
 })
 export class AppComponent implements OnInit {
-  
+
   isProd = env.production;
   envName = env.envName;
   version = env.versions.app;
@@ -53,7 +53,9 @@ export class AppComponent implements OnInit {
     private store: Store,
     private storageService: LocalStorageService,
     private serviceWorkedHandler: ServiceWorkedHandler
-  ) {}
+  ) {
+    console.log('App 🙁');
+  }
 
   private static isIEorEdgeOrSafari() {
     return ['ie', 'edge', 'safari'].includes(browser().name);
