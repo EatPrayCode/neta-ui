@@ -36,7 +36,6 @@ export class AppComponent implements OnInit {
   navigation = [
     { link: 'about', label: 'neta.menu.about' },
     { link: 'feature-list', label: 'neta.menu.features' },
-    { link: 'examples', label: 'neta.menu.examples' }
   ];
   navigationSideMenu = [
     ...this.navigation,
