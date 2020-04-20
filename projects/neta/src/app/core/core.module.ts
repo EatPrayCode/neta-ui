@@ -25,7 +25,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSelectModule } from '@angular/material/select';
 import { MatTooltipModule } from '@angular/material/tooltip';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 import { environment } from '../../environments/environment';
@@ -38,7 +38,7 @@ import {
 } from './core.state';
 import { AuthEffects } from './auth/auth.effects';
 import { selectIsAuthenticated, selectAuth } from './auth/auth.selectors';
-import { authLogin, authLogout } from './auth/auth.actions';
+import { authLogin, authLogout, authLoginComplete, authLogoutComplete, authLoginSuccess } from './auth/auth.actions';
 import { AuthGuardService } from './auth/auth-guard.service';
 import { TitleService } from './title/title.service';
 import {
@@ -80,6 +80,9 @@ export {
   selectAuth,
   authLogin,
   authLogout,
+  authLoginComplete,
+  authLogoutComplete,
+  authLoginSuccess,
   routeAnimations,
   AppState,
   LocalStorageService,
@@ -120,6 +123,9 @@ export function HttpLoaderFactory(http: HttpClient) {
     MatSnackBarModule,
     MatButtonModule,
 
+    FormsModule,
+    ReactiveFormsModule,
+
     // ngrx
     StoreModule.forRoot(reducers, { metaReducers }),
     StoreRouterConnectingModule.forRoot(),
@@ -131,8 +137,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     environment.production
       ? []
       : StoreDevtoolsModule.instrument({
-          name: 'NetaConnect'
-        }),
+        name: 'NetaConnect'
+      }),
 
     // 3rd party
     FontAwesomeModule,

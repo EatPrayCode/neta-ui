@@ -19,5 +19,11 @@ export const environment = {
     angularCli: packageJson.devDependencies['@angular/cli'],
     typescript: packageJson.devDependencies['typescript'],
     cypress: packageJson.devDependencies['cypress']
+  },
+  auth: {
+    clientID: 'QVFvgf7IRxwuZDqWpm7U5te8Xhz4nZDg',
+    domain: 'dev-4wy2-wyo.auth0.com', // e.g., you.auth0.com
+    redirect: 'https://www.netaconnect.com/callback',
+    scope: 'openid profile email'
   }
 };

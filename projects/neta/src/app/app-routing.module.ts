@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
+import { CallbackComponent } from './core/auth/auth/components/callback/callback.component';
 
 const routes: Routes = [
   {
@@ -29,6 +30,7 @@ const routes: Routes = [
     loadChildren: () =>
       import('./features/examples/examples.module').then(m => m.ExamplesModule)
   },
+  { path: 'callback', component: CallbackComponent },
   {
     path: '**',
     redirectTo: 'about'
