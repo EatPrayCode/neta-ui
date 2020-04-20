@@ -30,7 +30,6 @@
               "projects/neta/src/manifest.webmanifest"
             ],
             "styles": [
-              "projects/neta/src/styles-app-loading.scss",
               "projects/neta/src/styles.scss"
             ],
             "scripts": []

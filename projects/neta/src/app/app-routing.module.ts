@@ -5,7 +5,7 @@ import { CallbackComponent } from './core/auth/auth/components/callback/callback
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'about',
+    redirectTo: 'examples',
     pathMatch: 'full'
   },
   {
