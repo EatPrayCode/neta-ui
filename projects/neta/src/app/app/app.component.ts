@@ -71,6 +71,19 @@ export class AppComponent implements OnInit {
     this.stickyHeader$ = this.store.pipe(select(selectSettingsStickyHeader));
     this.language$ = this.store.pipe(select(selectSettingsLanguage));
     this.theme$ = this.store.pipe(select(selectEffectiveTheme));
+
+    let OneSignal = window['OneSignal'] || [];
+    OneSignal.push(["init", {
+        appId: "896d03e9-c5b0-4038-90df-8dae110d2dd8",
+        autoRegister: false, 
+        subdomainName: 'https://www.netaconnect.com',   
+        httpPermissionRequest: {
+            enable: true
+        },
+        notifyButton: {
+            enable: true 
+        }
+    }]);
   }
 
   onLoginClick() {
