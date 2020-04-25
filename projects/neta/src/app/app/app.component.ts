@@ -51,7 +51,7 @@ export class AppComponent implements OnInit {
   constructor(
     private store: Store,
     private storageService: LocalStorageService
-  ) {}
+  ) { }
 
   private static isIEorEdgeOrSafari() {
     return ['ie', 'edge', 'safari'].includes(browser().name);
@@ -73,17 +73,33 @@ export class AppComponent implements OnInit {
     this.theme$ = this.store.pipe(select(selectEffectiveTheme));
 
     let OneSignal = window['OneSignal'] || [];
+    console.log("Init OneSignal");
     OneSignal.push(["init", {
-        appId: "896d03e9-c5b0-4038-90df-8dae110d2dd8",
-        autoRegister: false, 
-        subdomainName: 'https://www.netaconnect.com',   
-        httpPermissionRequest: {
-            enable: true
-        },
-        notifyButton: {
-            enable: true 
-        }
+      appId: "896d03e9-c5b0-4038-90df-8dae110d2dd8",
+      autoRegister: true,
+      subdomainName: 'https://www.netaconnect.com',
+      allowLocalhostAsSecureOrigin: true,
+      notifyButton: {
+        enable: true
+      },
+      httpPermissionRequest: {
+        enable: true
+      }
     }]);
+
+    OneSignal.push(function () {
+      console.log('Register For Push');
+      OneSignal.push(["registerForPushNotifications"])
+    });
+    OneSignal.push(function () {
+      // Occurs when the user's subscription changes to a new value.
+      OneSignal.on('subscriptionChange', function (isSubscribed) {
+        console.log("The user's subscription state is now:", isSubscribed);
+        OneSignal.getUserId().then(function (userId) {
+          console.log("User ID is", userId);
+        });
+      });
+    });
   }
 
   onLoginClick() {
