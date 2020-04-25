@@ -1,5 +1,15 @@
-$neta-primary: mat-palette($mat-indigo, 800, 300, 900);
-$neta-accent: mat-palette($mat-light-blue);
-$neta-warn: mat-palette($mat-pink, 600);
+// $neta-primary: mat-palette($mat-indigo, 800, 300, 900);
+// $neta-accent: mat-palette($mat-light-blue);
+// $neta-warn: mat-palette($mat-pink, 600);
 
-$neta-theme: mat-light-theme($neta-primary, $neta-accent, $neta-warn);
+// $neta-theme: mat-light-theme($neta-primary, $neta-accent, $neta-warn);
+
+$neta-primary: mat-palette($mat-brown, 700, 300, 900);
+$neta-accent: mat-palette($mat-deep-purple, 300);
+$neta-warn: mat-palette($mat-red, 600);
+
+$neta-theme: mat-light-theme(
+  $neta-primary,
+  $neta-accent,
+  $neta-warn
+);
