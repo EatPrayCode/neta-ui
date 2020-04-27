@@ -34,9 +34,12 @@ export class AppComponent implements OnInit {
   logo = require('../../assets/logo.webp');
   languages = ['en', 'hin'];
   navigation = [
-    { link: 'about', label: 'neta.menu.about' },
-    { link: 'feature-list', label: 'neta.menu.features' },
-    { link: 'examples', label: 'neta.menu.examples' }
+    { link: 'home', label: 'neta.menu.home' },
+    // { link: 'feature-list', label: 'neta.menu.features' },
+    { link: 'ticket-list', label: 'neta.menu.tickets' },
+    { link: 'landing', label: 'neta.menu.landing' },
+    // { link: 'about', label: 'neta.menu.about' },
+    // { link: 'examples', label: 'neta.menu.examples' }
   ];
   navigationSideMenu = [
     ...this.navigation,

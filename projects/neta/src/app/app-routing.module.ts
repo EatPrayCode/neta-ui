@@ -5,7 +5,7 @@ import { CallbackComponent } from './core/auth/auth/components/callback/callback
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'examples',
+    redirectTo: 'landing',
     pathMatch: 'full'
   },
   {
@@ -14,10 +14,27 @@ const routes: Routes = [
       import('./features/about/about.module').then(m => m.AboutModule)
   },
   {
+    path: 'landing',
+    loadChildren: () =>
+      import('./features/landing/about.module').then(m => m.LandingModule)
+  },
+  {
+    path: 'home',
+    loadChildren: () =>
+      import('./features/home/examples.module').then(m => m.HomeModule)
+  },
+  {
     path: 'feature-list',
     loadChildren: () =>
       import('./features/feature-list/feature-list.module').then(
         m => m.FeatureListModule
+      )
+  },
+  {
+    path: 'ticket-list',
+    loadChildren: () =>
+      import('./features/ticket-list/feature-list.module').then(
+        m => m.TicketListModule
       )
   },
   {
