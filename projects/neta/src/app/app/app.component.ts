@@ -32,7 +32,7 @@ export class AppComponent implements OnInit {
   version = env.versions.app;
   year = new Date().getFullYear();
   logo = require('../../assets/logo.webp');
-  languages = ['en', 'de', 'sk', 'fr', 'es', 'pt-br', 'zh-cn', 'he'];
+  languages = ['en', 'hin'];
   navigation = [
     { link: 'about', label: 'neta.menu.about' },
     { link: 'feature-list', label: 'neta.menu.features' },
@@ -66,40 +66,10 @@ export class AppComponent implements OnInit {
         })
       );
     }
-
     this.isAuthenticated$ = this.store.pipe(select(selectIsAuthenticated));
     this.stickyHeader$ = this.store.pipe(select(selectSettingsStickyHeader));
     this.language$ = this.store.pipe(select(selectSettingsLanguage));
     this.theme$ = this.store.pipe(select(selectEffectiveTheme));
-
-    let OneSignal = window['OneSignal'] || [];
-    console.log("Init OneSignal");
-    OneSignal.push(["init", {
-      appId: "896d03e9-c5b0-4038-90df-8dae110d2dd8",
-      autoRegister: true,
-      subdomainName: 'https://www.netaconnect.com',
-      allowLocalhostAsSecureOrigin: true,
-      notifyButton: {
-        enable: true
-      },
-      httpPermissionRequest: {
-        enable: true
-      }
-    }]);
-
-    OneSignal.push(function () {
-      console.log('Register For Push');
-      OneSignal.push(["registerForPushNotifications"])
-    });
-    OneSignal.push(function () {
-      // Occurs when the user's subscription changes to a new value.
-      OneSignal.on('subscriptionChange', function (isSubscribed) {
-        console.log("The user's subscription state is now:", isSubscribed);
-        OneSignal.getUserId().then(function (userId) {
-          console.log("User ID is", userId);
-        });
-      });
-    });
   }
 
   onLoginClick() {

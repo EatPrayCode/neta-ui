@@ -27,9 +27,7 @@
             "assets": [
               "projects/neta/src/favicon.ico",
               "projects/neta/src/assets",
-              "projects/neta/src/manifest.webmanifest",
-              "src/OneSignalSDKUpdaterWorker.js",
-              "src/OneSignalSDKWorker.js"
+              "projects/neta/src/manifest.webmanifest"
             ],
             "styles": [
               "projects/neta/src/styles.scss"
