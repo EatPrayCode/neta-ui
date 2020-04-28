@@ -1,5 +1,9 @@
-$neta-primary: mat-palette($mat-indigo, 800, 300, 900);
-$neta-accent: mat-palette($mat-light-blue);
-$neta-warn: mat-palette($mat-pink, 600);
+$neta-light-primary: mat-palette($mat-grey, 200, 500, 300);
+$neta-light-accent: mat-palette($mat-brown, 200);
+$neta-light-warn: mat-palette($mat-deep-orange, 200);
 
-$neta-theme: mat-light-theme($neta-primary, $neta-accent, $neta-warn);
+$neta-theme: mat-light-theme(
+  $neta-light-primary,
+  $neta-light-accent,
+  $neta-light-warn
+);
