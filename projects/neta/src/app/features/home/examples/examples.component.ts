@@ -31,7 +31,7 @@ export class ExamplesComponent implements OnInit {
     // { link: 'form', label: 'neta.examples.menu.form' },
     // { link: 'notifications', label: 'neta.examples.menu.notifications' },
     // { link: 'elements', label: 'neta.examples.menu.elements' },
-    { link: 'authenticated', label: 'neta.examples.menu.auth', auth: true }
+    // { link: 'authenticated', label: 'neta.examples.menu.auth', auth: true }
   ];
 
   constructor(private store: Store<State>) {}
