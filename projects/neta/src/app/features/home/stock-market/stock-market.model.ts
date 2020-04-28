@@ -16,4 +16,5 @@ export interface StockMarketState {
   loading: boolean;
   stock?: Stock;
   error?: HttpErrorResponse;
+  tickets?: [];
 }

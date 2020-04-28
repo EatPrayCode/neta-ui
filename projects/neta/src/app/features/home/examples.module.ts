@@ -29,6 +29,7 @@ import { ExamplesEffects } from './examples.effects';
 import { UserComponent } from './simple-state-management/components/user.component';
 import { UserService } from './simple-state-management/user.service';
 import { ElementsComponent } from './elements/elements.component';
+import { ApiService } from '../../core/api/api.service';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(
@@ -74,7 +75,11 @@ export function HttpLoaderFactory(http: HttpClient) {
     UserComponent,
     ElementsComponent
   ],
-  providers: [StockMarketService, UserService]
+  providers: [
+    StockMarketService, 
+    UserService,
+    ApiService
+  ]
 })
 export class HomeModule {
   constructor() {}

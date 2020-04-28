@@ -21,7 +21,7 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        redirectTo: 'todos',
+        redirectTo: 'tickets',
         pathMatch: 'full'
       },
       {
@@ -30,7 +30,7 @@ const routes: Routes = [
         data: { title: 'neta.examples.menu.todos' }
       },
       {
-        path: 'stock-market',
+        path: 'tickets',
         component: StockMarketContainerComponent,
         data: { title: 'neta.examples.menu.stocks' }
       },

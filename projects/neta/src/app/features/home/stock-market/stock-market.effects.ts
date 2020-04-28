@@ -33,6 +33,9 @@ export class StockMarketEffects {
       debounceTime(debounce),
       switchMap(action =>
         this.service.retrieveStock(action.symbol).pipe(
+          tap(s=>{
+            console.log(s);
+          }),
           map(stock => actionStockMarketRetrieveSuccess({ stock })),
           catchError(error => of(actionStockMarketRetrieveError({ error })))
         )

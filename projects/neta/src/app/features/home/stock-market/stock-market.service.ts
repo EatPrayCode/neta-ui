@@ -2,27 +2,14 @@ import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 
 import { Stock } from './stock-market.model';
+import { ApiService } from '../../../core/api/api.service';
 
 @Injectable()
 export class StockMarketService {
-  constructor() {}
+  constructor(private apiService: ApiService) {}
 
-  retrieveStock(symbol: string): Observable<Stock> {
-    // would do HTTP  request but is hard to find reliable free stock quote API
-    const result = this.buildResult(symbol);
-    return of(result);
+  retrieveStock(symbol: string): Observable<any> {
+    return this.apiService.getTickets(symbol);
   }
 
-  private buildResult(symbol: string): Stock {
-    return {
-      symbol,
-      exchange: 'Nasdaq',
-      last: '124',
-      ccy: 'USD',
-      change: '1',
-      changePositive: true,
-      changeNegative: false,
-      changePercent: '0.81'
-    };
-  }
 }

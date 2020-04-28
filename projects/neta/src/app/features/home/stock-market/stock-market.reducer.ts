@@ -8,7 +8,8 @@ import { Action, createReducer, on } from '@ngrx/store';
 
 export const initialState: StockMarketState = {
   symbol: 'GOOGL',
-  loading: false
+  loading: false,
+  tickets: []
 };
 
 const reducer = createReducer(
@@ -24,6 +25,7 @@ const reducer = createReducer(
     ...state,
     loading: false,
     stock,
+    // tickets: stock,
     error: null
   })),
   on(actionStockMarketRetrieveError, (state, { error }) => ({

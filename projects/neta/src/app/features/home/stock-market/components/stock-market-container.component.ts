@@ -9,6 +9,7 @@ import { selectStockMarket } from '../stock-market.selectors';
 import { actionStockMarketRetrieve } from '../stock-market.actions';
 import { StockMarketState } from '../stock-market.model';
 import { State } from '../../examples.state';
+import { Feature, features } from './feature-list.data';
 
 @Component({
   selector: 'neta-stock-market',
@@ -19,6 +20,7 @@ import { State } from '../../examples.state';
 export class StockMarketContainerComponent implements OnInit {
   routeAnimationsElements = ROUTE_ANIMATIONS_ELEMENTS;
   stocks$: Observable<StockMarketState>;
+  features: Feature[] = features;
 
   constructor(public store: Store<State>) {}
 

@@ -143,5 +143,6 @@
   "neta.examples.todos.toggle.notification": "Toggled {{name}} to",
   "neta.examples.todos.tooltip.add": "Add new todo",
   "neta.examples.todos.tooltip.remove": "Remove done todos",
-  "neta.examples.todos.undo": "Undo"
+  "neta.examples.todos.undo": "Undo",
+  "neta.examples.documentation": "Docs"
 }
