@@ -13,12 +13,14 @@ import {
   selectIsAuthenticated,
   selectSettingsStickyHeader,
   selectSettingsLanguage,
-  selectEffectiveTheme
+  selectEffectiveTheme,
+  NotificationService
 } from '../core/core.module';
 import {
   actionSettingsChangeAnimationsPageDisabled,
   actionSettingsChangeLanguage
 } from '../core/settings/settings.actions';
+import { SwUpdate } from '@angular/service-worker';
 
 @Component({
   selector: 'neta-root',
@@ -53,7 +55,9 @@ export class AppComponent implements OnInit {
 
   constructor(
     private store: Store,
-    private storageService: LocalStorageService
+    private storageService: LocalStorageService,
+    private swUpdate: SwUpdate,
+    private notificationsService: NotificationService
   ) { }
 
   private static isIEorEdgeOrSafari() {
@@ -73,6 +77,16 @@ export class AppComponent implements OnInit {
     this.stickyHeader$ = this.store.pipe(select(selectSettingsStickyHeader));
     this.language$ = this.store.pipe(select(selectSettingsLanguage));
     this.theme$ = this.store.pipe(select(selectEffectiveTheme));
+    if(this.isProd){
+      this.checkForUpdatePwa();
+    }
+  }
+
+  checkForUpdatePwa(){
+    this.swUpdate.available.subscribe(event => {
+      this.notificationsService.success('Update Available');
+    });
+    this.swUpdate.checkForUpdate();
   }
 
   onLoginClick() {
