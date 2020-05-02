@@ -31,6 +31,13 @@ const routes: Routes = [
       )
   },
   {
+    path: 'org-tree',
+    loadChildren: () =>
+      import('./features/org-tree/org-tree.module').then(
+        m => m.OrgTreeModule
+      )
+  },
+  {
     path: 'ticket-list',
     loadChildren: () =>
       import('./features/ticket-list/feature-list.module').then(

@@ -114,7 +114,9 @@
             "styles": [
               "projects/neta/src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "src/app/features/org-tree/org-tree/OrgChart.js"
+            ]
           },
           "configurations": {
             "test": {
