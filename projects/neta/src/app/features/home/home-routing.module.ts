@@ -17,7 +17,7 @@ const routes: Routes = [
       {
         path: 'appointments',
         component: AppointmentsContainerComponent,
-        data: { title: 'neta.examples.menu.stocks' }
+        data: { title: 'neta.examples.menu.appointments' }
       }
     ]
   }
