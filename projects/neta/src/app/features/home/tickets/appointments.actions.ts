@@ -1,7 +1,7 @@
 import { createAction, props } from '@ngrx/store';
 import { HttpErrorResponse } from '@angular/common/http';
 
-import { Stock } from './stock-market.model';
+import { Appointment } from './appointments.model';
 
 export const actionStockMarketRetrieve = createAction(
   '[Stock] Retrieve',
@@ -10,7 +10,7 @@ export const actionStockMarketRetrieve = createAction(
 
 export const actionStockMarketRetrieveSuccess = createAction(
   '[Stock] Retrieve Success',
-  props<{ stock: Stock }>()
+  props<{ stock: Appointment }>()
 );
 
 export const actionStockMarketRetrieveError = createAction(

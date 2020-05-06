@@ -1,12 +1,12 @@
-import { StockMarketState } from './stock-market.model';
+import { AppointmentsState } from './appointments.model';
 import {
   actionStockMarketRetrieve,
   actionStockMarketRetrieveError,
   actionStockMarketRetrieveSuccess
-} from './stock-market.actions';
+} from './appointments.actions';
 import { Action, createReducer, on } from '@ngrx/store';
 
-export const initialState: StockMarketState = {
+export const initialState: AppointmentsState = {
   symbol: 'GOOGL',
   loading: false,
   tickets: []
@@ -37,7 +37,7 @@ const reducer = createReducer(
 );
 
 export function stockMarketReducer(
-  state: StockMarketState | undefined,
+  state: AppointmentsState | undefined,
   action: Action
 ) {
   return reducer(state, action);

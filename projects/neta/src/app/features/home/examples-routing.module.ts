@@ -2,8 +2,8 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 
-import { ExamplesComponent } from './examples/examples.component';
-import { StockMarketContainerComponent } from './stock-market/components/stock-market-container.component';
+import { ExamplesComponent } from './home/examples.component';
+import { TicketsContainerComponent } from './tickets/components/tickets-container.component';
 
 const routes: Routes = [
   {
@@ -17,7 +17,7 @@ const routes: Routes = [
       },
       {
         path: 'tickets',
-        component: StockMarketContainerComponent,
+        component: TicketsContainerComponent,
         data: { title: 'neta.examples.menu.stocks' }
       }
     ]

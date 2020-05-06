@@ -11,10 +11,10 @@ import { environment } from '../../../environments/environment';
 
 import { FEATURE_NAME, reducers } from './examples.state';
 import { ExamplesRoutingModule } from './examples-routing.module';
-import { ExamplesComponent } from './examples/examples.component';
-import { StockMarketContainerComponent } from './stock-market/components/stock-market-container.component';
-import { StockMarketEffects } from './stock-market/stock-market.effects';
-import { StockMarketService } from './stock-market/stock-market.service';
+import { ExamplesComponent } from './home/examples.component';
+import { TicketsContainerComponent } from './tickets/components/tickets-container.component';
+import { StockMarketEffects } from './tickets/appointments.effects';
+import { AppointmentsService } from './tickets/appointments.service';
 import { ExamplesEffects } from './examples.effects';
 import { ApiService } from '../../core/api/api.service';
 import { CommonModule } from '@angular/common';
@@ -50,10 +50,10 @@ export function HttpLoaderFactory(http: HttpClient) {
   ],
   declarations: [
     ExamplesComponent,
-    StockMarketContainerComponent,
+    TicketsContainerComponent,
   ],
   providers: [
-    StockMarketService,
+    AppointmentsService,
     ApiService
   ]
 })

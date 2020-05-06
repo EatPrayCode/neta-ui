@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 
-import { Stock } from './stock-market.model';
+import { Appointment } from './appointments.model';
 import { ApiService } from '../../../core/api/api.service';
 
 @Injectable()
-export class StockMarketService {
+export class AppointmentsService {
   constructor(private apiService: ApiService) {}
 
   retrieveStock(symbol: string): Observable<any> {

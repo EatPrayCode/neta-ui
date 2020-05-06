@@ -5,27 +5,27 @@ import { take } from 'rxjs/operators';
 
 import { ROUTE_ANIMATIONS_ELEMENTS } from '../../../../core/core.module';
 
-import { selectStockMarket } from '../stock-market.selectors';
-import { actionStockMarketRetrieve } from '../stock-market.actions';
-import { StockMarketState } from '../stock-market.model';
+import { selectAppointments } from '../appointments.selectors';
+import { actionStockMarketRetrieve } from '../appointments.actions';
+import { AppointmentsState } from '../appointments.model';
 import { State } from '../../examples.state';
 import { Feature, features } from './feature-list.data';
 
 @Component({
-  selector: 'neta-stock-market',
-  templateUrl: './stock-market-container.component.html',
-  styleUrls: ['./stock-market-container.component.scss'],
+  selector: 'neta-tickets',
+  templateUrl: './tickets-container.component.html',
+  styleUrls: ['./tickets-container.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class StockMarketContainerComponent implements OnInit {
+export class TicketsContainerComponent implements OnInit {
   routeAnimationsElements = ROUTE_ANIMATIONS_ELEMENTS;
-  stocks$: Observable<StockMarketState>;
+  stocks$: Observable<AppointmentsState>;
   features: Feature[] = features;
 
   constructor(public store: Store<State>) {}
 
   ngOnInit() {
-    this.stocks$ = this.store.pipe(select(selectStockMarket));
+    this.stocks$ = this.store.pipe(select(selectAppointments));
     this.stocks$
       .pipe(take(1))
       .subscribe(stocks => this.onSymbolChange(stocks.symbol));

@@ -9,8 +9,8 @@ import {
   actionStockMarketRetrieve,
   actionStockMarketRetrieveError,
   actionStockMarketRetrieveSuccess
-} from './stock-market.actions';
-import { StockMarketService } from './stock-market.service';
+} from './appointments.actions';
+import { AppointmentsService } from './appointments.service';
 
 export const STOCK_MARKET_KEY = 'EXAMPLES.STOCKS';
 
@@ -19,7 +19,7 @@ export class StockMarketEffects {
   constructor(
     private actions$: Actions,
     private localStorageService: LocalStorageService,
-    private service: StockMarketService
+    private service: AppointmentsService
   ) {}
 
   retrieveStock = createEffect(() => ({ debounce = 500 } = {}) =>

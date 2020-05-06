@@ -1,6 +1,6 @@
 import { HttpErrorResponse } from '@angular/common/http';
 
-export interface Stock {
+export interface Appointment {
   symbol: string;
   exchange: string;
   last: string;
@@ -11,10 +11,10 @@ export interface Stock {
   changePercent: string;
 }
 
-export interface StockMarketState {
+export interface AppointmentsState {
   symbol: string;
   loading: boolean;
-  stock?: Stock;
+  stock?: Appointment;
   error?: HttpErrorResponse;
   tickets?: [];
 }
