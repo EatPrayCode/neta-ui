@@ -1,23 +1,22 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-
-import { ExamplesComponent } from './home/examples.component';
-import { TicketsContainerComponent } from './tickets/components/tickets-container.component';
+import { HomeComponent } from './home/home.component';
+import { AppointmentsContainerComponent } from './appointments/components/appointments-container.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: ExamplesComponent,
+    component: HomeComponent,
     children: [
       {
         path: '',
-        redirectTo: 'tickets',
+        redirectTo: 'appointments',
         pathMatch: 'full'
       },
       {
-        path: 'tickets',
-        component: TicketsContainerComponent,
+        path: 'appointments',
+        component: AppointmentsContainerComponent,
         data: { title: 'neta.examples.menu.stocks' }
       }
     ]
@@ -28,4 +27,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class ExamplesRoutingModule {}
+export class HomeRoutingModule {}

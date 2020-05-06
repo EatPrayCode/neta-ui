@@ -72,6 +72,7 @@
   "neta.examples.stocks.text5": "Actions are debounced and every subsequent request will cancel previous one using",
   "neta.examples.stocks.text6": "Success or error actions are emitted on request completion. Loading spinner is removed and stock info or error message is displayed.",
   "neta.examples.stocks.title": "Stock market",
+  "neta.examples.appointments.title": "Appointments",
   "neta.examples.elements.title": "Angular Elements (and other web components)",
   "neta.examples.elements.counter": "Counter",
   "neta.examples.elements.text1": "The button on the left side is a web component from the mwc (material web components) library. The web component was lazy loaded from the",

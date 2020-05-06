@@ -14,7 +14,7 @@ import {
 import { actionSettingsChangeLanguage } from '../../core/settings/settings.actions';
 
 @Injectable()
-export class ExamplesEffects {
+export class HomeEffects {
   constructor(
     private actions$: Actions,
     private store: Store<AppState>,

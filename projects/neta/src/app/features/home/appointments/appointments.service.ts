@@ -8,7 +8,7 @@ import { ApiService } from '../../../core/api/api.service';
 export class AppointmentsService {
   constructor(private apiService: ApiService) {}
 
-  retrieveStock(symbol: string): Observable<any> {
+  retrieveStock(symbol: string): Observable<Appointment> {
     return this.apiService.getTickets(symbol);
   }
 

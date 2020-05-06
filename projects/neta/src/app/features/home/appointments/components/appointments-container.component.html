@@ -1,7 +1,7 @@
-<div class="container" *ngIf="stocks$ | async as stocks">
+<div class="container" *ngIf="tickets$ | async as stocks">
   <div class="row">    
     <div class="col-md-12">
-      <h1 rtl class="main-heading">{{ 'neta.examples.stocks.title' | translate }}</h1>
+      <h1 rtl class="main-heading">{{ 'neta.examples.appointments.title' | translate }}</h1>
     </div>
   </div>
   <div class="row align-items-end">
@@ -21,7 +21,7 @@
               <fa-icon [icon]="['fab','github']"></fa-icon>
             </a>
             <a mat-button [href]="feature.documentation" target="_blank">
-              <fa-icon icon="book"></fa-icon>{{ 'neta.examples.stocks.title' | translate }}
+              <fa-icon icon="book"></fa-icon>{{ 'neta.examples.appointments.title' | translate }}
             </a>
             <a *ngIf="feature.medium" mat-button [href]="feature.medium" target="_blank">
               <fa-icon [icon]="['fab','medium-m']"></fa-icon>{{ 'neta.features.guide' | translate }}

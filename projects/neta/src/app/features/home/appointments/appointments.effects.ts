@@ -15,7 +15,7 @@ import { AppointmentsService } from './appointments.service';
 export const STOCK_MARKET_KEY = 'EXAMPLES.STOCKS';
 
 @Injectable()
-export class StockMarketEffects {
+export class TicketsEffects {
   constructor(
     private actions$: Actions,
     private localStorageService: LocalStorageService,

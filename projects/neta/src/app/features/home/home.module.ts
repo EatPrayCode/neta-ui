@@ -9,13 +9,13 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { SharedModule } from '../../shared/shared.module';
 import { environment } from '../../../environments/environment';
 
-import { FEATURE_NAME, reducers } from './examples.state';
-import { ExamplesRoutingModule } from './examples-routing.module';
-import { ExamplesComponent } from './home/examples.component';
-import { TicketsContainerComponent } from './tickets/components/tickets-container.component';
-import { StockMarketEffects } from './tickets/appointments.effects';
-import { AppointmentsService } from './tickets/appointments.service';
-import { ExamplesEffects } from './examples.effects';
+import { FEATURE_NAME, reducers } from './home.state';
+import { HomeRoutingModule } from './home-routing.module';
+import { HomeComponent } from './home/home.component';
+import { AppointmentsContainerComponent } from './appointments/components/appointments-container.component';
+import { TicketsEffects } from './appointments/appointments.effects';
+import { AppointmentsService } from './appointments/appointments.service';
+import { HomeEffects } from './home.effects';
 import { ApiService } from '../../core/api/api.service';
 import { CommonModule } from '@angular/common';
 
@@ -32,7 +32,7 @@ export function HttpLoaderFactory(http: HttpClient) {
   imports: [
     LazyElementsModule,
     SharedModule,
-    ExamplesRoutingModule,
+    HomeRoutingModule,
     CommonModule,
     StoreModule.forFeature(FEATURE_NAME, reducers),
     TranslateModule.forChild({
@@ -44,13 +44,13 @@ export function HttpLoaderFactory(http: HttpClient) {
       isolate: true
     }),
     EffectsModule.forFeature([
-      ExamplesEffects,
-      StockMarketEffects
+      HomeEffects,
+      TicketsEffects
     ])
   ],
   declarations: [
-    ExamplesComponent,
-    TicketsContainerComponent,
+    HomeComponent,
+    AppointmentsContainerComponent,
   ],
   providers: [
     AppointmentsService,

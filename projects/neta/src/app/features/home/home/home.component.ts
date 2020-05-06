@@ -7,21 +7,21 @@ import {
   selectIsAuthenticated
 } from '../../../core/core.module';
 
-import { State } from '../examples.state';
+import { State } from '../home.state';
 
 @Component({
-  selector: 'neta-examples',
-  templateUrl: './examples.component.html',
-  styleUrls: ['./examples.component.scss'],
+  selector: 'neta-home',
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.scss'],
   animations: [routeAnimations],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ExamplesComponent implements OnInit {
+export class HomeComponent implements OnInit {
   isAuthenticated$: Observable<boolean>;
 
   examples = [
     // { link: 'todos', label: 'neta.examples.menu.todos' },
-    { link: 'tickets', label: 'neta.examples.menu.tickets' },
+    { link: 'appointments', label: 'neta.examples.menu.appointments' },
     // { link: 'theming', label: 'neta.examples.menu.theming' },
     // { link: 'crud', label: 'neta.examples.menu.crud' },
     // {

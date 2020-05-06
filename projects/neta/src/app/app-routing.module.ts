@@ -21,7 +21,7 @@ const routes: Routes = [
   {
     path: 'home',
     loadChildren: () =>
-      import('./features/home/examples.module').then(m => m.HomeModule)
+      import('./features/home/home.module').then(m => m.HomeModule)
   },
   {
     path: 'feature-list',
